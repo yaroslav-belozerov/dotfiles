@@ -1,0 +1,105 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar at the bottom of your screen
+    "height": 22, // Waybar height
+    // "width": 1366, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["pulseaudio", "network", "battery", "backlight", "tray", "hyprland/language",  "clock"],
+    "wlr/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "format": "{name}",
+        "format-icons": {
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+    "hyprland/window": {
+	"max-length": 75,
+    },
+    "bluetooth": {
+	"on-click": "blueberry",
+        "format": "",
+	"format-disabled": " ",
+	"tooltip-format-on": "Not connected",
+	"tooltip-format-connected": "{device_alias} ({device_battery_percentage}%)",
+    },
+    "backlight": {
+	"tooltip-format": "Brightness: {percent}%",
+	"scroll-step": 5.0,
+        "format": "{icon}",
+	"format-icons" : ["", ""]
+    },
+    "hyprland/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "hyprland/language": {
+	"format": "{short}",
+	//"format-en": "EN",
+	//"format-ru": "RU",
+	"tooltip-format": "{short}",
+    },
+    "tray": {
+        "icon-size": 14,
+        "spacing": 7
+    },
+    "clock": {
+        "format-alt": "{:%d.%m.%Y}"
+    },
+    "cpu": {
+        "format": "{usage}% "
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "battery": {
+	"interval": 5,
+        "bat": "BAT0",
+	"on-click": "tlpui",
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+	"format-charging": " {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        // "interface": "wlp2s0", // (Optional) To force the use of this interface
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-disconnected": " ",
+        "on-click": "iwgtk",
+	"tooltip-format": "{essid}"
+    },
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "{volume}% {icon}",
+	"tooltip-format": "{volume}%",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": " ",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/spotify": {
+        "format": " {}",
+        "max-length": 40,
+        "interval": 30, // Remove this if your script is endless and write in loop
+        "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
+        "exec-if": "pgrep spotify"
+    }
+}

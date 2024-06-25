@@ -1,0 +1,142 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Noto Sans Mono Medium", "Font Awesome 6 Free"; 
+    font-size: 12px;
+    min-height: 0;
+}
+
+tooltip {
+    border-radius: 10px;
+    padding-left: 20px;
+    background: #282a36;
+}
+
+#tray > * > * {
+    border-radius: 10px;
+}
+
+#tray > * > * > * {
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+#bluetooth {
+    padding: 0 2px;
+}
+
+#bluetooth.disabled {
+    padding: 0 3px;
+}
+
+#language {
+    font-size: 10px;
+    font-weight: bold;
+    padding: 0 3px 1px 5px;
+}
+
+window#waybar {
+    background: #282a36;
+    color: #bd93f9;
+}
+
+#window {
+    padding-left: 10px;
+}
+
+#workspaces {
+    padding: 0 5px;
+}
+
+#workspaces button {
+    font-weight: bold;
+    padding: 0 5px;
+    background: transparent;
+    color: #f8f8f2;
+    border-top: 2px solid transparent;
+}
+
+#workspaces button.active {
+    color: #f8f8f2;
+    border-top: 2px solid #f8f8f2;
+}
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+}
+
+#clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray, #mode {
+    padding: 0 3px;
+    margin: 0 2px;
+}
+
+#network {
+    padding-right: 10px;
+}
+
+#clock {
+    font-weight: bold;
+}
+
+#battery {
+    padding-right: 3px;
+    padding-left: 0;
+}
+
+#battery icon {
+    color: red;
+}
+
+#battery.charging {
+    color: white;
+}
+
+@keyframes blink {
+    to {
+        color: red;
+	background: transparent;
+    }
+}
+
+#battery.warning:not(.charging) {
+    color: inherit;
+    background: transparent;   
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+}
+
+#memory {
+}
+
+#network {
+	padding-right: 7px;
+}
+
+#network.disconnected {
+}
+
+#pulseaudio {
+    padding: 0 5px;
+}
+
+#pulseaudio.muted {
+}
+
+#custom-spotify {
+    color: rgb(102, 220, 105);
+}
+
+#tray {
+    padding-right: 0;
+}
+
+#backlight {
+    padding: 0 5px;
+}
