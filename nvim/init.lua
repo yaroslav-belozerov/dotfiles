@@ -30,6 +30,11 @@ require("lazy").setup({
     "lewis6991/gitsigns.nvim",
     "andweeb/presence.nvim",
     {
+    	"ngtuonghy/live-server-nvim",
+    	event = "VeryLazy",
+    	build = ":LiveServerInstall",
+    },
+    {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
         ft = { "markdown" },
@@ -40,6 +45,7 @@ require("lazy").setup({
 
 vim.cmd[[colorscheme dracula-soft]]
 
+require("live-server-nvim").setup{}
 require'nvim-autopairs'.setup{}
 require'nvim-surround'.setup{}
 require'code_runner'.setup{}
@@ -54,7 +60,7 @@ require("presence").setup({
     neovim_image_text   = "The One True Text Editor",
     main_image          = "debug",
     client_id           = "793271441293967371",
-    log_level           = "debug",
+    log_level           = nil,
     debounce_timeout    = 10,
     enable_line_number  = false,
     blacklist           = {},
@@ -87,6 +93,9 @@ require'lspconfig'.lua_ls.setup{}
 require'lspconfig'.lua_ls.setup(coq.lsp_ensure_capabilities())
 require'lspconfig'.zls.setup{}
 require'lspconfig'.zls.setup(coq.lsp_ensure_capabilities())
+require'lspconfig'.html.setup(coq.lsp_ensure_capabilities())
+require'lspconfig'.emmet_ls.setup(coq.lsp_ensure_capabilities())
+require'lspconfig'.cssls.setup(coq.lsp_ensure_capabilities())
 
 local tele = require('telescope.builtin')
 

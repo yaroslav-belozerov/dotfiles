@@ -7,9 +7,10 @@ abbr -a gcm "git commit -m"
 abbr -a gp "git push"
 abbr -a gs "git status"
 abbr -a dnfi "sudo dnf install -y"
-abbr -a dnfu "sudo dnf upgrade"
-abbr -a nv-hyprland-config "nv ~/.config/hypr/hyprland.conf"
-abbr -a feh "feh --auto-zoom --scale-down"
+abbr -a upgrade_all "sudo dnf upgrade -y && flatpak update -y"
+abbr -a cfg_hyprland "nvim ~/.config/hypr/hyprland.conf"
+abbr -a cfg_fish "nvim ~/.config/fish/config.fish"
+abbr -a fehh "feh --auto-zoom --scale-down"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
