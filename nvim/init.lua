@@ -20,7 +20,6 @@ require("lazy").setup({
     "nvim-telescope/telescope.nvim",
     "Mofiqul/dracula.nvim",
     "kylechui/nvim-surround",
-    "luukvbaal/nnn.nvim",
     "windwp/nvim-autopairs",
     "CRAG666/code_runner.nvim",
     "nvim-lualine/lualine.nvim",
@@ -49,9 +48,6 @@ require("live-server-nvim").setup{}
 require'nvim-autopairs'.setup{}
 require'nvim-surround'.setup{}
 require'code_runner'.setup{}
-require("nnn").setup{}
-require'lualine'.setup{}
-require("barbecue").setup{}
 require("nvim-lsp-installer").setup{}
 require('gitsigns').setup()
 require("presence").setup({
@@ -81,25 +77,20 @@ require("presence").setup({
 local coq = require("coq")
 --require'lspconfig'.jedi_language_server.setup{}
 ----require'lspconfig'.jedi_language_server.setup(coq.lsp_ensure_capabilities())
-require'lspconfig'.tailwindcss.setup{}
 require'lspconfig'.tailwindcss.setup(coq.lsp_ensure_capabilities())
-require'lspconfig'.eslint.setup{}
 require'lspconfig'.eslint.setup(coq.lsp_ensure_capabilities())
-require'lspconfig'.pyright.setup{}
 require'lspconfig'.pyright.setup(coq.lsp_ensure_capabilities())
-require'lspconfig'.clangd.setup{}
 require'lspconfig'.clangd.setup(coq.lsp_ensure_capabilities())
-require'lspconfig'.lua_ls.setup{}
 require'lspconfig'.lua_ls.setup(coq.lsp_ensure_capabilities())
-require'lspconfig'.zls.setup{}
 require'lspconfig'.zls.setup(coq.lsp_ensure_capabilities())
 require'lspconfig'.html.setup(coq.lsp_ensure_capabilities())
 require'lspconfig'.emmet_ls.setup(coq.lsp_ensure_capabilities())
 require'lspconfig'.cssls.setup(coq.lsp_ensure_capabilities())
+require'lspconfig'.kotlin_language_server.setup(coq.lsp_ensure_capabilities())
+require'lspconfig'.gopls.setup(coq.lsp_ensure_capabilities())
 
 local tele = require('telescope.builtin')
 
-vim.keymap.set('n', '<leader>p', '<cmd>NnnPicker<CR>', {})
 vim.keymap.set('n', '<leader>ff', tele.find_files, {})
 vim.keymap.set('n', '<leader>r', ':RunCode<CR>', {})
 

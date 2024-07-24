@@ -1,5 +1,5 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+    cowsay -f small "Welcome, $USER! <3"
 end
 
 zoxide init fish | source
