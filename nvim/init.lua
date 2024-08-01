@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
+require("lazy").setup {
     "nvim-treesitter/nvim-treesitter",
     "nvim-lua/plenary.nvim",
     "ms-jpq/coq_nvim",
@@ -29,7 +29,7 @@ require("lazy").setup({
     "lewis6991/gitsigns.nvim",
     "andweeb/presence.nvim",
     {
-    	"ngtuonghy/live-server-nvim",
+	"ngtuonghy/live-server-nvim",
     	event = "VeryLazy",
     	build = ":LiveServerInstall",
     },
@@ -38,8 +38,8 @@ require("lazy").setup({
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
         ft = { "markdown" },
         build = function() vim.fn["mkdp#util#install"]() end,
-    }
-})
+    },
+}
 
 
 vim.cmd[[colorscheme dracula-soft]]
