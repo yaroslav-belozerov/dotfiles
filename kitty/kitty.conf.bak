@@ -1,0 +1,6 @@
+include dracula.conf
+
+window_padding_width 8 10
+cursor_shape block
+shell_integration no-cursor
+confirm_os_window_close 0

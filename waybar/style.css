@@ -1,15 +1,21 @@
+@import "mocha.css";
+
 * {
     border: none;
     border-radius: 0;
-    font-family: "Noto Sans Mono Medium", "Font Awesome 6 Free"; 
+    font-family: "Inter 24pt", "Font Awesome 6 Free"; 
     font-size: 12px;
     min-height: 0;
 }
 
 tooltip {
-    border-radius: 10px;
-    padding-left: 20px;
-    background: #282a36;
+    border-radius: 5px;
+    border: @overlay1 1px solid;
+    background: @surface0;
+}
+
+tooltip > * {
+    background: transparent;
 }
 
 #tray > * > * {
@@ -36,76 +42,87 @@ tooltip {
 }
 
 window#waybar {
-    background: #282a36;
-    color: #bd93f9;
+    border-radius: 7px;
+    background: @base;
+    color: @text;
 }
 
 #window {
-    padding-left: 10px;
+    padding-left: 3px;
+    font-weight: 500;
+    color: @mauve;
 }
 
 #workspaces {
-    padding: 0 5px;
+    margin: 3px;
 }
 
 #workspaces button {
-    font-weight: bold;
+    border-radius: 5px;
+    font-weight: 900;
     padding: 0 5px;
     background: transparent;
-    color: #f8f8f2;
-    border-top: 2px solid transparent;
+    transition-property: background;
+    transition: 0.25s;
+    color: @text;
 }
 
 #workspaces button.active {
-    color: #f8f8f2;
-    border-top: 2px solid #f8f8f2;
+    color: @text;
+    padding: 0 5px;
+    background: @surface0;
 }
 
 #mode {
-    background: #64727D;
-    border-bottom: 3px solid white;
+    background: @base;
+    border-bottom: 3px solid @text;
 }
 
-#clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray, #mode {
-    padding: 0 3px;
-    margin: 0 2px;
+#clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray, #mode, #language, #backlight {
+    padding: 0 10px;
+    margin: 4px 3px;
+    background: @surface0;
+    border-radius: 5px;
 }
+
+#clock:hover, #battery:hover, #cpu:hover, #memory:hover, #network:hover, #pulseaudio:hover, #custom-spotify:hover, #mode:hover {
+    background: @surface1;
+} 
 
 #network {
     padding-right: 10px;
 }
 
 #clock {
-    font-weight: bold;
+    margin-right: 4px;
+    font-weight: 900;
+    letter-spacing: 2px;
 }
 
 #calendar {
-    font-size: 40px;
+    font-size: 60px;
 }
 
 #battery {
-    padding-right: 3px;
-    padding-left: 0;
-}
-
-#battery icon {
-    color: red;
 }
 
 #battery.charging {
-    color: white;
+    color: @green;
+}
+
+#battery.charged {
+    color: @overlay1;
+    padding: 0 5px;
 }
 
 @keyframes blink {
     to {
-        color: red;
-	background: transparent;
+        color: @mauve;
     }
 }
 
 #battery.warning:not(.charging) {
     color: inherit;
-    background: transparent;   
     animation-name: blink;
     animation-duration: 1s;
     animation-timing-function: linear;
@@ -127,20 +144,36 @@ window#waybar {
 }
 
 #pulseaudio {
-    padding: 0 5px;
 }
 
 #pulseaudio.muted {
 }
 
 #custom-spotify {
-    color: rgb(102, 220, 105);
+    /*color: rgb(102, 220, 105);*/
+    margin: 4px 6px;
+    color: @green;
 }
 
 #tray {
-    padding-right: 0;
+    padding: 0 5px;
 }
 
 #backlight {
     padding: 0 5px;
+    min-width: 12px;
+}
+
+#custom-weathericon {
+    padding: 0 10px 0 2px;
+    margin: 4px 3px 4px 0;
+    background: @surface0;
+    border-radius: 0 5px 5px 0;
+}
+
+#custom-weathertemp {
+    padding: 0 2px 0 10px;
+    margin: 4px 0;
+    background: @surface0;
+    border-radius: 5px 0 0 5px; 
 }

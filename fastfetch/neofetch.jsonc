@@ -16,9 +16,10 @@
             "key": "Resolution"
         },
         "wm",
+        "packages",
         "wmtheme",
-        "theme",
         "terminal",
-        "cpu",
+        "editor",
+        "disk"
     ]
 }
