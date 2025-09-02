@@ -7,7 +7,7 @@ configuration {
 }
 
 * {
-    font: "Jetbrains Mono 12";
+    font: "Noto Sans Mono";
 }
 
 @theme "/home/yaroslav/.local/share/rofi/themes/catppuccin-mocha.rasi"

@@ -7,7 +7,8 @@
     "reload_style_on_change": true,
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
-    "modules-right": ["custom/spotify", "custom/weathertemp", "custom/weathericon", "pulseaudio", "battery", "backlight", "tray", "hyprland/language", "clock"],
+    //"custom/weathertemp", "custom/weathericon",
+    "modules-right": ["custom/spotify", "pulseaudio", "battery", "backlight", "tray", "hyprland/language", "clock"],
     "fixed-center": false,
     "spacing": 0,
     "wlr/workspaces": {

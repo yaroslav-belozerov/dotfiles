@@ -23,6 +23,14 @@ lspconfig.eslint.setup {
   filetypes = { "javascript" }
 }
 
+lspconfig.eslint.setup {
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
+  cmd = { "svelteserver" },
+  filetypes = { "svelte" }
+}
+
 lspconfig.rust_analyzer.setup {
   on_attach = nvlsp.on_attach,
   capabilities = nvlsp.capabilities,
